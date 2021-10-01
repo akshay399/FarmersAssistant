@@ -14,11 +14,12 @@
     "react-dom": "^16.13.1",
     "react-ga": "^2.7.0",
     "react-router-dom": "^5.1.2",
+    "react-router-hash-link": "^2.4.3",
     "react-scripts": "^3.4.1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cruip/open-react-template.git"
+    "url": "https://github.com/akshay399/FarmersAssistant.git"
   },
   "scripts": {
     "start": "react-scripts start",

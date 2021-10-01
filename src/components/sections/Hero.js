@@ -5,7 +5,7 @@ import ButtonGroup from "../elements/ButtonGroup";
 import Button from "../elements/Button";
 import Image from "../elements/Image";
 import Modal from "../elements/Modal";
-
+import { HashLink as Link } from 'react-router-hash-link';
 const propTypes = {
   ...SectionProps.types,
 };
@@ -60,14 +60,17 @@ const Hero = ({
               className="mt-0 mb-16 reveal-from-bottom"
               data-reveal-delay="200"
             >
-              Farmer's <span className="text-color-primary">Assistant</span>
+              Farmer's{" "}
+              <span style={{ fontSize: "50px" }} className="text-color-primary">
+                Assistant
+              </span>
             </h1>
             <div className="container-xs">
               <p
                 className="m-0 mb-32 reveal-from-bottom"
                 data-reveal-delay="400"
               >
-               Plan farming with our tools and increase your crop productivity!
+                Plan farming with our tools and increase your crop productivity!
               </p>
               <div className="reveal-from-bottom" data-reveal-delay="600">
                 <ButtonGroup>
@@ -75,7 +78,7 @@ const Hero = ({
                     tag="a"
                     color="primary"
                     wideMobile
-                    href="https://cruip.com/"
+                    href="#"
                   >
                     Get started
                   </Button>
@@ -83,7 +86,7 @@ const Hero = ({
                     tag="a"
                     color="dark"
                     wideMobile
-                    href="https://github.com/cruip/open-react-template/"
+                    href="https://github.com/akshay399/FarmersAssistant"
                   >
                     View on Github
                   </Button>
