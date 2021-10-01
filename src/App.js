@@ -18,6 +18,7 @@ import LayoutDefault from "./layouts/LayoutDefault";
 import Home from "./views/Home";
 import Footer from "./components/layout/Footer";
 import Crop from "./components/pages/Crop";
+import DiseaseUpload from "./components/pages/DiseaseUpload";
 
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
@@ -59,6 +60,7 @@ const App = () => {
               <News news={news} />
             </Route>
             <Route exact path="/crop" component={Crop} />
+            <Route exact path="/disease_upload" component={DiseaseUpload} />
           </Switch>
         )}
       />
