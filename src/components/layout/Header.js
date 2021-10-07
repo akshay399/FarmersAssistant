@@ -117,6 +117,11 @@ const Header = ({
                       </Link>
                     </li>
                     <li>
+                      <Link to="fertilizer" onClick={closeMenu}>
+                        Fertilizer recc.
+                      </Link>
+                    </li>
+                    <li>
                       <Link to="disease_upload" onClick={closeMenu}>
                         Disease Detection
                       </Link>

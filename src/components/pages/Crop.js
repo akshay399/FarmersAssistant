@@ -29,7 +29,7 @@ export default function Crop() {
     }
     console.log(sendObj);
     axios.post('https://farmers-assistant-backend.herokuapp.com/crop-predict',sendObj).then(response=>{
-      console.log("add this",   response );
+      console.log("add this",response );
     })
     .catch(error=>{
       console.log(error);
