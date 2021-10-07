@@ -4,6 +4,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  useHistory
 } from "react-router-dom";
 import AppRoute from "./utils/AppRoute";
 import ScrollReveal from "./utils/ScrollReveal";
@@ -18,6 +19,9 @@ import LayoutDefault from "./layouts/LayoutDefault";
 import Home from "./views/Home";
 import Footer from "./components/layout/Footer";
 import Crop from "./components/pages/Crop";
+import Crop_form from "./components/pages/Crop_form";
+import Result_crop from "./components/pages/Result_crop";
+
 
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
@@ -48,6 +52,10 @@ const App = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
 
+  const getcropdata = (data)=>{
+    console.log('in app.js',data);
+  }
+
   return (
     <>
       <ScrollReveal
@@ -58,7 +66,19 @@ const App = () => {
             <Route exact path="/news">
               <News news={news} />
             </Route>
-            <Route exact path="/crop" component={Crop} />
+           
+            <Route exact path="/crop">
+              <Crop_form />
+            </Route>
+
+           
+        <Route exact path="/crop_predict" getcropdata={getcropdata}>
+              < Result_crop getcropdata={getcropdata}/>
+            </Route>
+        
+
+           
+
           </Switch>
         )}
       />

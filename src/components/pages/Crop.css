@@ -60,6 +60,14 @@ button {
   cursor: pointer;
 }
 
+.result {
+  background: black;
+  color: white;
+  cursor: pointer;
+  justify-content: space-around;
+  text-align: center;
+}
+
 button:disabled {
   cursor: default;
 }

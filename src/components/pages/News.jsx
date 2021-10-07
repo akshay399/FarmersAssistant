@@ -8,11 +8,12 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Grid from "@material-ui/core/Grid";
-import { spacing } from "@material-ui/system";
+
 const News = ({ news }) => {
   var news = Object.values(news);
   return (
     <div>
+
       <Grid container justify="center" spacing={4}>
         {news.map((item) => (
           <>
