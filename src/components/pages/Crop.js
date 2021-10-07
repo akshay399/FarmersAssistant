@@ -28,8 +28,8 @@ export default function Crop() {
 
     }
     console.log(sendObj);
-    axios.post('http://127.0.0.1:8000/crop-predict',sendObj).then(response=>{
-      console.log(response);
+    axios.post('https://farmers-assistant-backend.herokuapp.com/crop-predict',sendObj).then(response=>{
+      console.log("add this",   response );
     })
     .catch(error=>{
       console.log(error);
@@ -102,7 +102,7 @@ export default function Crop() {
 
           {/* <span id="email-error">Please enter an email address</span> */}
           <button class="form-field" type="submit" onClick={predict}>
-            Predict
+            Predict 
           </button>
         </form>
       </div>

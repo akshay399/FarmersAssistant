@@ -112,15 +112,16 @@ const Header = ({
                     )}
                   >
                     <li>
-                      <Link to="#0" onClick={closeMenu}>
-                        Documentation
-                      </Link>
-                    </li>
-                    <li>
                       <Link to="/crop" onClick={closeMenu}>
                         Crop
                       </Link>
                     </li>
+                    <li>
+                      <Link to="disease_upload" onClick={closeMenu}>
+                        Disease Detection
+                      </Link>
+                    </li>
+
                     <li>
                       <Link to="/news" onClick={closeMenu}>
                         News

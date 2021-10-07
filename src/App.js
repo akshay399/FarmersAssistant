@@ -19,9 +19,7 @@ import LayoutDefault from "./layouts/LayoutDefault";
 import Home from "./views/Home";
 import Footer from "./components/layout/Footer";
 import Crop from "./components/pages/Crop";
-import Crop_form from "./components/pages/Crop_form";
-import Result_crop from "./components/pages/Result_crop";
-
+import DiseaseUpload from "./components/pages/DiseaseUpload";
 
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
@@ -66,19 +64,8 @@ const App = () => {
             <Route exact path="/news">
               <News news={news} />
             </Route>
-           
-            <Route exact path="/crop">
-              <Crop_form />
-            </Route>
-
-           
-        <Route exact path="/crop_predict" getcropdata={getcropdata}>
-              < Result_crop getcropdata={getcropdata}/>
-            </Route>
-        
-
-           
-
+            <Route exact path="/crop" component={Crop} />
+            <Route exact path="/disease_upload" component={DiseaseUpload} />
           </Switch>
         )}
       />
