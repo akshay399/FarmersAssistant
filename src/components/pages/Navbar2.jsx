@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import { Link } from "react-router-dom";
-import Logo from "./partials/Logo";
+import Logo from "../layout/partials/Logo";
 
 const propTypes = {
   navPosition: PropTypes.string,
@@ -20,7 +20,7 @@ const defaultProps = {
   bottomDivider: false,
 };
 
-const Header = ({
+const Navbar2 = ({
   className,
   navPosition,
   hideNav,
@@ -87,7 +87,7 @@ const Header = ({
             bottomDivider && "has-bottom-divider"
           )}
         >
-          <Logo style = {{ resizeMode: 'contain'}}/>
+            <Logo/>
           {!hideNav && (
             <>
               <button
@@ -136,13 +136,13 @@ const Header = ({
                   {!hideSignin && (
                     <ul className="list-reset header-nav-right">
                       <li>
-                        {/* <Link
+                        <Link
                           to="#0"
                           className="button button-primary button-wide-mobile button-sm"
                           onClick={closeMenu}
                         >
                           Sign up
-                        </Link> */}
+                        </Link>
                       </li>
                     </ul>
                   )}
@@ -156,7 +156,6 @@ const Header = ({
   );
 };
 
-Header.propTypes = propTypes;
-Header.defaultProps = defaultProps;
 
-export default Header;
+
+export default Navbar2;

@@ -40,6 +40,7 @@ const App = () => {
       "https://farmers-assistant-backend.herokuapp.com/news"
     );
     setNews(res.data);
+    console.log(res.data);
   };
 
   useEffect(() => {
@@ -65,9 +66,9 @@ const App = () => {
             <Route exact path="/news">
               <News news={news} />
             </Route>
-            <Route exact path="/crop" component={Crop} />
-            <Route exact path="/disease_upload" component={DiseaseUpload} />
-            <Route exact path="/fertilizer" component={Fertilizer} />
+            <Route exact path="/crop" component={Crop} layout={LayoutDefault} />
+            <Route exact path="/disease_upload" component={DiseaseUpload} layout={LayoutDefault} />
+            <Route exact path="/fertilizer" component={Fertilizer} layout={LayoutDefault} />
 
           </Switch>
         )}

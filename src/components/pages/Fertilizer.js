@@ -1,6 +1,54 @@
 import React from 'react'
 import { useState } from "react";
 import axios from "axios";
+import Modal from "react-modal";
+
+
+const customStyles = {
+  content: {
+    maxheight: "500px",
+    maxwidth: "500px",
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
+
+const styles = {
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingTop: 50,
+  },
+  preview: {
+    marginTop: 50,
+    display: "flex",
+    flexDirection: "column",
+  },
+  image: { maxWidth: "100%", maxHeight: 320 },
+  delete: {
+    cursor: "pointer",
+    padding: 15,
+    background: "red",
+    color: "white",
+    border: "none",
+  },
+  upload: {
+    cursor: "pointer",
+    padding: 15,
+    background: "green",
+    color: "white",
+    border: "none",
+  },
+  textCenter: {
+    textAlign: "center",
+  },
+};
 
 function Fertilizer() {
 
@@ -8,6 +56,8 @@ function Fertilizer() {
   const [phosphorous, setPhosphorous] = useState();
   const [pottasium, setPottasium] = useState();
   const [cropname, setCropname] = useState();
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [result , setResult] = useState();
 
   const predict = (e) =>{
 
@@ -22,7 +72,12 @@ function Fertilizer() {
     }
     console.log(sendObj);
     axios.post('https://farmers-assistant-backend.herokuapp.com/fertilizer-predict',sendObj).then(response=>{
-      console.log("add this",response );
+      console.log("add this",response.data.fertilizer );
+      setResult(response.data.fertilizer)
+      setModalIsOpen(true);
+
+
+
     })
     .catch(error=>{
       console.log(error);
@@ -34,7 +89,8 @@ function Fertilizer() {
     return (
         <>
         {/* <Header navPosition="right" className="reveal-from-bottom" /> */}
-  
+      
+        <h3 style={styles.textCenter}>🌾Fertilizer Recommendation 🌾</h3>
         <div class="form-container">
           <form class="register-form">
             {/* <div class="success-message">Success! Thank you for registering</div> */}
@@ -82,6 +138,25 @@ function Fertilizer() {
             </button>
           </form>
         </div>
+        <Modal style={customStyles} isOpen={modalIsOpen}>
+        <h3
+          style={{
+            color: "#38b000",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            textAlign: "center",
+          }}
+        >
+          Result:
+        </h3>
+        <p dangerouslySetInnerHTML = {{__html : result}}/>
+
+        <div>
+          {" "}
+          <button onClick={() => setModalIsOpen(false)}> Close</button>
+        </div>
+      </Modal>
       </>
     )
 }

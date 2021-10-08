@@ -13,8 +13,8 @@ const Logo = ({ className, ...props }) => {
           <Image
             src={require("./../../../assets/images/mainLogo.png")}
             alt="Open"
-            width={82}
-            height={82}
+            width={60}
+            height={60}
             // style={
             //   bord
             // }

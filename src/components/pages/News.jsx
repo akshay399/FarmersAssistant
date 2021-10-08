@@ -9,35 +9,71 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Grid from "@material-ui/core/Grid";
 
+const styles = {
+  container: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingTop: 50,
+  },
+  preview: {
+    marginTop: 50,
+    display: "flex",
+    flexDirection: "column",
+  },
+  image: { maxWidth: "100%", maxHeight: 320 },
+  delete: {
+    cursor: "pointer",
+    padding: 15,
+    background: "red",
+    color: "white",
+    border: "none",
+  },
+  upload: {
+    cursor: "pointer",
+    padding: 15,
+    background: "green",
+    color: "white",
+    border: "none",
+  },
+  textCenter: {
+    textAlign: "center",
+  },
+};
+
 const News = ({ news }) => {
   var news = Object.values(news);
   return (
     <div>
 
-      <Grid container justify="center" spacing={4}>
+<h3 style={styles.textCenter}>🌾  Agricultural News  🌾</h3>
+
+      <Grid container justifyContent="center" spacing={3}>
         {news.map((item) => (
           <>
-            <Grid key={item.id} item xs={12} sm={6} md={4} lg={3}>
+            <Grid key={item.id} item xs={12} sm="auto" md="auto" lg="auto">
               <Card sx={{ maxWidth: 345 }}>
                 <CardMedia
                   component="img"
                   height="140"
                   image={item.image}
-                  alt="green iguana"
+                  alt="news image"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    News
+                  <Typography gutterBottom variant="body2" component="div"  noWrap>
+                  {item.summary}
                   </Typography>
-                  <Typography noWrap variant="body2" color="text.secondary">
+                  {/* <Typography noWrap variant="body2" color="text.secondary">
                     {item.summary}
-                  </Typography>
+                  </Typography> */}
+                  
                 </CardContent>
                 <CardActions>
-                  <Button mt={7} size="small">
+                  {/* <Button mt={7} size="small">
                     Share{" "}
-                  </Button>
-                  <Button href={item.link} variant="contained" size="small">
+                  </Button> */}
+                  <Button href={item.link}  size="small" variant="contained">
                     Learn More
                   </Button>
                 </CardActions>
